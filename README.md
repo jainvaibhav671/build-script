@@ -1,4 +1,4 @@
-j# Introduction
+# Introduction
 
 A script that lets you run your programs without the hassle of remembering different commands for different languages.
 

@@ -21,12 +21,14 @@ class Builder:
                 print("Can't build")
                 sys.exit()
         elif self.mode == '-r':
-            f = build()
+            print("building")
+            f = self.build()
+            print("built")
             if (len(f) != 0):
                 self.file = f
             self.run()
         elif self.mode == '-d':
-            f = build();
+            f = self.build();
             if (len(f) != 0):
                 self.file = f
             self.run()
@@ -72,12 +74,13 @@ class Builder:
         if (lang == None):
             sys.exit()
             return
-        if (not lang.get(self.mode)):
+        if (len(lang.get(self.mode, "")) == 0):
             print(f"Edit the configuration file for {self.mode} mode.")
             sys.exit()
         return lang.get(self.mode)
 
     def run(self):
+        print('running')
         mode = '-r'
         cmd = self.getcmd()
         
@@ -93,7 +96,6 @@ class Builder:
     def build(self):
         mode = '-b'
         cmd = self.getcmd()
-    
         if (len(cmd) == 0):
             return ""
     

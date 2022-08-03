@@ -1,0 +1,28 @@
+
+# Define extension for each language
+# Define run and build commands here
+
+# use '$2' for output file
+# use '$1' for input file
+
+[python]
+extension = "py"
+run = "python -u $1"
+
+[cpp]
+extension = "cpp"
+build = "g++ -o $2 $1"
+run = "./$1"
+
+[markdown]
+extension = "md"
+run = "marker -p $1"
+
+[go]
+extension = "go"
+run = "go run $1"
+build = "go build $1"
+
+[java]
+extension = "java"
+run = "java $1"
